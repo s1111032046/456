@@ -1,24 +1,48 @@
-function run(){
-  let Tbox = document.querySelector('.box-container');
-  for(var i = 2 ; i <=9 ; i++){
-    let box = document.createElement('div');
-    box.className = "box box-content";
-    let inbox = document.createElement('div');
-    inbox.className = "inbox-content";
-    var mun = document.createElement("h1");
-    mun.innerText = i ;
-    
-    inbox.appendChild(mun)
-    for(var a = 1 ; a <= 9 ; a++){
-      var formula_li = document.createElement('li');
-      var formula_span = document.createElement('span');
-      var ans = i*a;
-      formula_span.innerText = i + " × " + a + " = " + ans;
-      formula_li.appendChild(formula_span)
-      inbox.appendChild(formula_li)
-    }
-    box.appendChild(inbox)
-    Tbox.appendChild(box)
-  }
-}
-run()
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: #FFFFBB;
+        }
+
+        th {
+            background-color: #FFDDAA;
+        }
+        td,th {
+            border: 1px solid black;
+            font-family: 微軟正黑體;
+            padding: 5px;
+            text-align:center;
+        }
+
+            td:hover {
+                background-color: #FFEE99;
+            }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<table>");
+        document.write("<tr>");
+            for (a = 2; a < 10; a++) {
+                document.write("<th>");
+                document.write(a + "的乘法表" + "<br>");
+                document.write("</th>");
+            }
+        document.write("</tr>");
+        for (x = 2; x < 10; x++) {
+            document.write("<td>");
+            for (y = 1; y < 10; y++) {
+                document.write(x + "*" + y + "=" + x * y + "<br>");
+            }
+            document.write("</td>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+</html>
